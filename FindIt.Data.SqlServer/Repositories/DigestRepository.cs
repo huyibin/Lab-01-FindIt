@@ -47,6 +47,7 @@ namespace FindIt.Data.SqlServer.Repositories {
         public IEnumerable<Digest> Find(int pageIndex) {
             return this.GetDbSet<Digest>().Take(pageIndex)
                 .ToList();
+            // Test
         }
 
         public IPagedList<Digest> GetAll(int pageIndex, int pageSize) {
