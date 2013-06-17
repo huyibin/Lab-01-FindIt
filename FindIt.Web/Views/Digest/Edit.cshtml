@@ -1,0 +1,16 @@
+﻿@model FindIt.Web.Models.DigestFormModel
+@{
+    ViewBag.Title = "Edit";
+}
+<h2>
+    Edit</h2>
+@using (Html.BeginForm("Edit", "Digest", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+   
+    <div>
+        @Html.Partial("_DigestForm", Model)
+    </div>
+    <div>
+        <button type="submit" value="save">
+            Submit</button>
+    </div>
+}

@@ -1,0 +1,22 @@
+﻿@model  FindIt.Web.Models.DigestListModel
+@using FindIt.Web;
+@using FindIt.Web.Extensions;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_RootLayout.cshtml";
+}
+<h2>
+    All Digests</h2>
+<span>@Html.ActionLink("添加文章", "Add", "Digest")</span>
+<div>
+    @foreach (var digest in Model.Digests) {
+        <div>
+            <h1>@Html.ActionLink(digest.Title, "Edit", new { id = digest.Id })</h1>
+            <p>@digest.Brief</p>
+            <span>@Html.ActionLink("详细2", "Show", new { id = digest.Id })</span>
+        </div>
+    }
+</div>
+<div class="pager">
+    @Html.Pager(Model.PagingFilteringContext).QueryParam("pagenumber")
+</div>

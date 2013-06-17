@@ -1,0 +1,15 @@
+﻿@model  IEnumerable<FindIt.Model.Digest>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_RootLayout.cshtml";
+}
+
+<h2>All Digests</h2>
+<div>
+@foreach (var digest in Model) {
+    <div>
+    <h1>@digest.Title</h1>
+    <p>@digest.Brief</p>
+    </div>
+}
+</div>
